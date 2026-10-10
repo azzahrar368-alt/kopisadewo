@@ -1,0 +1,122 @@
+.ks-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--letter-spacing-wide);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  transition: 
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+  
+  /* Memastikan target sentuh minimal 44px ramah jari di perangkat sentuh */
+  min-height: var(--touch-target-min, 44px);
+  min-width: var(--touch-target-min, 44px);
+  position: relative;
+}
+
+/* ==========================================================================
+   Varian Tombol
+   ========================================================================== */
+
+/* Primary: Nuansa kayu jati tua (Espresso) beraksen karamel hangat */
+.ks-button--primary {
+  background-color: var(--color-espresso);
+  color: var(--color-cream);
+  border: 1.5px solid var(--color-espresso);
+  box-shadow: var(--shadow-subtle);
+}
+
+.ks-button--primary:hover:not(:disabled) {
+  background-color: var(--color-espresso-hover);
+  border-color: var(--color-caramel);
+  color: var(--color-white);
+  box-shadow: var(--shadow-card);
+  transform: translateY(-1px);
+}
+
+.ks-button--primary:active:not(:disabled) {
+  background-color: var(--color-espresso-active);
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+/* Secondary: Garis batas karamel elegan di atas latar sejuk */
+.ks-button--secondary {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: var(--color-espresso);
+  border: 1.5px solid var(--color-caramel);
+}
+
+.ks-button--secondary:hover:not(:disabled) {
+  background-color: var(--color-cream-subtle);
+  border-color: var(--color-caramel-dark);
+  color: var(--color-espresso);
+  box-shadow: var(--shadow-subtle);
+  transform: translateY(-1px);
+}
+
+.ks-button--secondary:active:not(:disabled) {
+  background-color: var(--color-cream-border);
+  transform: translateY(1px);
+}
+
+/* ==========================================================================
+   Ukuran Tombol (Semua memenuhi batas minimal >= 44px)
+   ========================================================================== */
+.ks-button--sm {
+  min-height: 44px;
+  padding: 0 var(--space-4);
+  font-size: var(--fs-sm);
+}
+
+.ks-button--md {
+  min-height: 48px;
+  padding: 0 var(--space-6);
+  font-size: var(--fs-base);
+}
+
+.ks-button--lg {
+  min-height: 52px;
+  padding: 0 var(--space-8);
+  font-size: var(--fs-lg);
+}
+
+/* ==========================================================================
+   Modifier Tambahan
+   ========================================================================== */
+.ks-button--full-width {
+  width: 100%;
+}
+
+.ks-button:disabled,
+.ks-button[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none;
+  transform: none;
+}
+
+.ks-button:focus-visible {
+  outline: 2px solid var(--color-caramel);
+  outline-offset: 3px;
+}
+
+.ks-button__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 1.125em;
+  height: 1.125em;
+}

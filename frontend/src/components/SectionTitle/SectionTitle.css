@@ -1,0 +1,139 @@
+.ks-section-title {
+  margin-bottom: var(--space-10);
+}
+
+.ks-section-title--center {
+  text-align: center;
+}
+
+.ks-section-title--left {
+  text-align: left;
+}
+
+.ks-section-title--right {
+  text-align: right;
+}
+
+.ks-section-title__eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--letter-spacing-wider);
+  text-transform: uppercase;
+  color: var(--color-caramel);
+  margin-bottom: var(--space-2);
+}
+
+.ks-section-title__heading {
+  font-family: var(--font-heading);
+  color: var(--color-espresso);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-snug);
+  margin-bottom: 0;
+}
+
+/* Ornamen pembatas khas rumah Joglo Jawa */
+.ks-section-title__ornament {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-4);
+  width: 100%;
+}
+
+.ks-section-title--center .ks-section-title__ornament {
+  justify-content: center;
+  max-width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ks-section-title--left .ks-section-title__ornament {
+  justify-content: flex-start;
+  max-width: 240px;
+}
+
+.ks-section-title--right .ks-section-title__ornament {
+  justify-content: flex-end;
+  max-width: 240px;
+  margin-left: auto;
+}
+
+.ks-section-title__ornament-line {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-caramel) 50%,
+    transparent 100%
+  );
+  opacity: 0.6;
+}
+
+.ks-section-title--left .ks-section-title__ornament-line:first-child {
+  display: none;
+}
+
+.ks-section-title--left .ks-section-title__ornament-line:last-child {
+  background: linear-gradient(
+    90deg,
+    var(--color-caramel) 0%,
+    transparent 100%
+  );
+}
+
+.ks-section-title--right .ks-section-title__ornament-line:last-child {
+  display: none;
+}
+
+.ks-section-title--right .ks-section-title__ornament-line:first-child {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-caramel) 100%
+  );
+}
+
+.ks-section-title__ornament-diamond {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-caramel);
+  transform: rotate(45deg);
+  border-radius: 1px;
+  flex-shrink: 0;
+}
+
+.ks-section-title__description {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  color: var(--color-mocha);
+  line-height: var(--lh-relaxed);
+  max-width: 62ch;
+  margin-top: var(--space-2);
+}
+
+.ks-section-title--center .ks-section-title__description {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ks-section-title--right .ks-section-title__description {
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .ks-section-title {
+    margin-bottom: var(--space-12);
+  }
+  
+  .ks-section-title__eyebrow {
+    font-size: var(--fs-sm);
+  }
+  
+  .ks-section-title__description {
+    font-size: var(--fs-lg);
+  }
+}

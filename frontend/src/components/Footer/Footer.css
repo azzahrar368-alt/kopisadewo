@@ -1,0 +1,155 @@
+/* ==========================================================================
+   Footer Component - Kopi Sadewo
+   ========================================================================== */
+
+.ks-footer {
+  background-color: var(--color-espresso);
+  color: var(--color-cream);
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-8);
+  margin-top: auto;
+  border-top: 2px solid var(--color-caramel);
+  position: relative;
+}
+
+.ks-footer__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-10);
+  margin-bottom: var(--space-12);
+}
+
+@media (min-width: 640px) {
+  .ks-footer__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .ks-footer__grid {
+    grid-template-columns: 2fr 1.2fr 1.2fr 1.4fr;
+    gap: var(--space-8);
+  }
+}
+
+/* Kolom Brand & Filosofi */
+.ks-footer__brand-title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-bold);
+  color: var(--color-cream);
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-2);
+}
+
+.ks-footer__brand-tagline {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--letter-spacing-wider);
+  text-transform: uppercase;
+  color: var(--color-caramel-light);
+  margin-bottom: var(--space-4);
+}
+
+.ks-footer__brand-desc {
+  font-size: var(--fs-sm);
+  color: #D3C4B6;
+  line-height: var(--lh-relaxed);
+  max-width: 38ch;
+  margin-bottom: var(--space-4);
+}
+
+/* Judul Kolom */
+.ks-footer__col-title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-semibold);
+  color: var(--color-cream);
+  margin-bottom: var(--space-4);
+  position: relative;
+  display: inline-block;
+}
+
+.ks-footer__col-title::after {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-caramel);
+  margin-top: var(--space-2);
+}
+
+/* Daftar Tautan */
+.ks-footer__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.ks-footer__link {
+  font-size: var(--fs-sm);
+  color: #D3C4B6;
+  text-decoration: none;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+}
+
+.ks-footer__link:hover {
+  color: var(--color-caramel-light);
+  transform: translateX(3px);
+}
+
+/* Jam Operasional & Kontak */
+.ks-footer__schedule-item,
+.ks-footer__contact-item {
+  font-size: var(--fs-sm);
+  color: #D3C4B6;
+  margin-bottom: var(--space-3);
+  line-height: 1.5;
+}
+
+.ks-footer__schedule-day,
+.ks-footer__contact-label {
+  font-weight: var(--fw-semibold);
+  color: var(--color-cream);
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* Pembatas & Baris Bawah */
+.ks-footer__bottom {
+  border-top: 1px solid rgba(198, 139, 89, 0.25);
+  padding-top: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .ks-footer__bottom {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+.ks-footer__copyright {
+  font-size: var(--fs-xs);
+  color: #B5A292;
+  margin-bottom: 0;
+}
+
+.ks-footer__motto {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: var(--fs-sm);
+  color: var(--color-caramel-light);
+  margin-bottom: 0;
+}

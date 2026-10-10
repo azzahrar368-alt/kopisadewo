@@ -1,44 +1,366 @@
-.app-container {
+/* ==========================================================================
+   Halaman Uji Sementara - Kopi Sadewo
+   ========================================================================== */
+
+.ks-testpage {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: var(--color-cream);
+}
+
+.ks-testpage__main {
+  flex: 1;
+  padding-bottom: var(--space-20);
+}
+
+/* ==========================================================================
+   Hero Preview Section
+   ========================================================================== */
+.ks-hero-section {
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
+  text-align: center;
+  position: relative;
+  background: radial-gradient(
+    circle at 50% 20%,
+    rgba(198, 139, 89, 0.08) 0%,
+    transparent 70%
+  );
+}
+
+.ks-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px 16px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--border-caramel);
+  border-radius: var(--radius-full);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-mocha);
+  margin-bottom: var(--space-6);
+  box-shadow: var(--shadow-subtle);
+}
+
+.ks-hero-badge__dot {
+  width: 7px;
+  height: 7px;
+  background-color: var(--color-caramel);
+  border-radius: 50%;
+}
+
+.ks-hero-title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-4xl);
+  font-weight: var(--fw-bold);
+  color: var(--color-espresso);
+  line-height: 1.15;
+  max-width: 22ch;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: var(--space-5);
+}
+
+@media (min-width: 768px) {
+  .ks-hero-title {
+    font-size: var(--fs-5xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .ks-hero-title {
+    font-size: var(--fs-6xl);
+  }
+}
+
+.ks-hero-subtitle {
+  font-size: var(--fs-base);
+  color: var(--color-mocha);
+  max-width: 58ch;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: var(--space-8);
+  line-height: var(--lh-relaxed);
+}
+
+@media (min-width: 768px) {
+  .ks-hero-subtitle {
+    font-size: var(--fs-lg);
+  }
+}
+
+.ks-hero-cta {
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
-  background-color: var(--color-cream);
-  color: var(--color-espresso);
-  text-align: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-10);
 }
 
-.brand-card {
+/* ==========================================================================
+   Section Layouts & Spacing
+   ========================================================================== */
+.ks-section-wrapper {
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
+  border-top: 1px solid var(--border-primary);
+}
+
+.ks-section-wrapper--alt {
+  background-color: rgba(255, 255, 255, 0.45);
+}
+
+/* ==========================================================================
+   Color Palette Showcase
+   ========================================================================== */
+.ks-palette-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: var(--space-5);
+  margin-bottom: var(--space-10);
+}
+
+@media (min-width: 640px) {
+  .ks-palette-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .ks-palette-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.ks-swatch-card {
   background-color: var(--color-white);
-  border: 1px solid var(--color-caramel);
-  border-radius: 8px;
-  padding: 2.5rem 2rem;
-  max-width: 520px;
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.ks-swatch-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-elevated);
+}
+
+.ks-swatch-color {
+  height: 96px;
   width: 100%;
-  box-shadow: 0 4px 12px rgba(59, 41, 34, 0.08);
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-3);
 }
 
-.brand-title {
+.ks-swatch-hex {
+  font-family: monospace;
+  font-size: var(--fs-xs);
+  padding: 2px 8px;
+  border-radius: var(--radius-xs);
+  background-color: rgba(0, 0, 0, 0.35);
+  color: #FFFFFF;
+  backdrop-filter: blur(4px);
+}
+
+.ks-swatch-info {
+  padding: var(--space-4);
+}
+
+.ks-swatch-name {
   font-family: var(--font-heading);
-  font-size: 2.25rem;
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
   color: var(--color-espresso);
-  margin-bottom: 0.5rem;
+  margin-bottom: 2px;
 }
 
-.brand-tagline {
+.ks-swatch-role {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-caramel);
+  font-weight: var(--fw-semibold);
+  margin-bottom: var(--space-2);
+}
+
+.ks-swatch-desc {
+  font-size: var(--fs-xs);
   color: var(--color-mocha);
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  margin-bottom: 0;
 }
 
-.status-badge {
-  display: inline-block;
-  background-color: var(--color-cream);
+/* ==========================================================================
+   Typography Showcase
+   ========================================================================== */
+.ks-typography-box {
+  background-color: var(--color-white);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-card);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .ks-typography-box {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.ks-type-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.ks-type-label {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wider);
+  color: var(--color-caramel);
+}
+
+.ks-type-sample-heading {
+  font-family: var(--font-heading);
+  font-size: var(--fs-2xl);
   color: var(--color-espresso);
-  border: 1px solid var(--color-caramel);
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
-  font-size: 0.875rem;
+  line-height: var(--lh-snug);
+}
+
+.ks-type-sample-body {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  color: var(--color-mocha);
+  line-height: var(--lh-relaxed);
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Buttons Showcase
+   ========================================================================== */
+.ks-button-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.ks-button-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-card);
+}
+
+.ks-button-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-xl);
+  color: var(--color-espresso);
+  margin-bottom: var(--space-2);
+}
+
+.ks-button-card__desc {
+  font-size: var(--fs-sm);
+  color: var(--color-mocha);
+  margin-bottom: var(--space-6);
+}
+
+.ks-button-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.ks-touch-target-banner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background-color: rgba(198, 139, 89, 0.08);
+  border-left: 3px solid var(--color-caramel);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: var(--fs-sm);
+  color: var(--color-espresso);
+}
+
+.ks-touch-target-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  background-color: var(--color-espresso);
+  color: var(--color-cream);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  border-radius: var(--radius-full);
+}
+
+/* ==========================================================================
+   Joglo Atmospheric Story Cards
+   ========================================================================== */
+.ks-joglo-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .ks-joglo-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.ks-joglo-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+}
+
+.ks-joglo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-elevated);
+}
+
+.ks-joglo-card__icon {
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-cream);
+  border: 1px solid var(--border-caramel);
+  color: var(--color-caramel-dark);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-5);
+}
+
+.ks-joglo-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-xl);
+  color: var(--color-espresso);
+  margin-bottom: var(--space-3);
+}
+
+.ks-joglo-card__text {
+  font-size: var(--fs-sm);
+  color: var(--color-mocha);
+  line-height: var(--lh-relaxed);
+  flex: 1;
+  margin-bottom: var(--space-6);
 }
