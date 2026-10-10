@@ -1,0 +1,29 @@
+/* Palet warna bernuansa joglo Jawa Kopi Sadewo */
+:root {
+  --color-espresso: #3B2922;
+  --color-mocha: #8A6248;
+  --color-cream: #F7F2E9;
+  --color-white: #FFFFFF;
+  --color-caramel: #C49A6C;
+
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-cream);
+  color: var(--color-espresso);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-espresso);
+}
