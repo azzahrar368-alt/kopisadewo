@@ -1,0 +1,498 @@
+/* ==========================================================================
+   Komponen Menu Kopi Sadewo
+   Mengikuti Sistem Desain Joglo Jawa (Espresso, Mocha, Cream, Caramel)
+   ========================================================================== */
+
+.ks-menu-section {
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Filter & Search Bar Controls
+   -------------------------------------------------------------------------- */
+.ks-menu-controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  margin-bottom: var(--space-10);
+}
+
+@media (min-width: 768px) {
+  .ks-menu-controls {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* Kolom Pencarian */
+.ks-menu-search-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+}
+
+.ks-menu-search-input {
+  width: 100%;
+  min-height: var(--touch-target-min, 44px);
+  padding: var(--space-3) var(--space-10) var(--space-3) var(--space-10);
+  background-color: var(--color-white);
+  border: 1.5px solid var(--border-primary);
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  color: var(--color-espresso);
+  box-shadow: var(--shadow-subtle);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.ks-menu-search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.ks-menu-search-input:focus {
+  outline: none;
+  border-color: var(--color-caramel);
+  box-shadow: 0 0 0 3px var(--color-caramel-subtle);
+}
+
+.ks-menu-search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-mocha);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ks-menu-search-clear {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  min-height: 28px;
+  border: none;
+  background: var(--color-cream-subtle);
+  color: var(--color-mocha);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+  padding: 0;
+}
+
+.ks-menu-search-clear:hover {
+  background-color: var(--color-espresso);
+  color: var(--color-cream);
+}
+
+/* Filter Kategori */
+.ks-menu-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.ks-menu-category-btn {
+  min-height: var(--touch-target-min, 44px);
+  padding: 0 var(--space-5);
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--letter-spacing-wide);
+  cursor: pointer;
+  border: 1.5px solid var(--border-primary);
+  background-color: var(--color-white);
+  color: var(--color-mocha);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.ks-menu-category-btn:hover {
+  background-color: var(--color-cream-subtle);
+  border-color: var(--color-caramel);
+  color: var(--color-espresso);
+}
+
+.ks-menu-category-btn--active {
+  background-color: var(--color-espresso);
+  border-color: var(--color-espresso);
+  color: var(--color-cream);
+  box-shadow: var(--shadow-subtle);
+}
+
+.ks-menu-category-btn--active:hover {
+  background-color: var(--color-espresso-hover);
+  border-color: var(--color-caramel);
+  color: var(--color-white);
+}
+
+/* --------------------------------------------------------------------------
+   Grid Kartu Menu
+   -------------------------------------------------------------------------- */
+.ks-menu-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 640px) {
+  .ks-menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .ks-menu-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .ks-menu-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Kartu Produk Kopi Sadewo */
+.ks-product-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  position: relative;
+}
+
+.ks-product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.ks-product-card__image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-color: var(--color-cream-subtle);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ks-product-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.ks-product-card:hover .ks-product-card__image {
+  transform: scale(1.04);
+}
+
+.ks-product-card__image-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-caramel);
+  background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-cream-subtle) 100%);
+  gap: var(--space-2);
+}
+
+.ks-product-card__image-fallback-text {
+  font-size: var(--fs-xs);
+  color: var(--color-mocha);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+/* Badges pada Kartu */
+.ks-product-card__badges {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+}
+
+.ks-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--letter-spacing-wide);
+  box-shadow: var(--shadow-subtle);
+}
+
+.ks-badge--category {
+  background-color: rgba(255, 255, 255, 0.92);
+  color: var(--color-espresso);
+  border: 1px solid var(--border-primary);
+  backdrop-filter: blur(4px);
+}
+
+.ks-badge--featured {
+  background-color: var(--color-caramel);
+  color: #FFFFFF;
+}
+
+.ks-badge--unavailable {
+  background-color: #6B7280;
+  color: #FFFFFF;
+}
+
+/* Konten Teks Kartu */
+.ks-product-card__body {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.ks-product-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  color: var(--color-espresso);
+  margin-bottom: var(--space-2);
+  line-height: var(--lh-snug);
+}
+
+.ks-product-card__desc {
+  font-size: var(--fs-xs);
+  color: var(--color-mocha);
+  line-height: 1.5;
+  margin-bottom: var(--space-4);
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ks-product-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--border-primary);
+  margin-top: auto;
+}
+
+.ks-product-card__price-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wider);
+  color: var(--text-muted);
+}
+
+.ks-product-card__price {
+  font-family: var(--font-heading);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  color: var(--color-caramel-dark);
+}
+
+/* --------------------------------------------------------------------------
+   Tampilan Loading Sederhana
+   -------------------------------------------------------------------------- */
+.ks-menu-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-16) var(--space-4);
+  gap: var(--space-4);
+  text-align: center;
+}
+
+.ks-menu-spinner {
+  width: 44px;
+  height: 44px;
+  border: 3.5px solid var(--color-cream-border);
+  border-top-color: var(--color-caramel);
+  border-radius: 50%;
+  animation: ks-spin 0.8s linear infinite;
+}
+
+@keyframes ks-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ks-menu-loading__text {
+  font-family: var(--font-heading);
+  font-size: var(--fs-lg);
+  color: var(--color-espresso);
+  margin-bottom: 0;
+}
+
+.ks-menu-loading__subtext {
+  font-size: var(--fs-sm);
+  color: var(--color-mocha);
+}
+
+/* Skeleton Grid */
+.ks-skeleton-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ks-skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(243, 236, 224, 0.4) 0%,
+    rgba(243, 236, 224, 0.9) 50%,
+    rgba(243, 236, 224, 0.4) 100%
+  );
+  background-size: 200% 100%;
+  animation: ks-shimmer 1.5s infinite;
+}
+
+@keyframes ks-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.ks-skeleton-image {
+  height: 180px;
+  width: 100%;
+}
+
+.ks-skeleton-body {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  flex: 1;
+}
+
+.ks-skeleton-line {
+  height: 14px;
+  border-radius: var(--radius-xs);
+}
+
+/* --------------------------------------------------------------------------
+   Pesan Error Ramah dengan Tombol "Coba lagi"
+   -------------------------------------------------------------------------- */
+.ks-menu-error {
+  background-color: var(--color-white);
+  border: 1.5px solid var(--color-caramel-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-10) var(--space-6);
+  text-align: center;
+  max-width: 540px;
+  margin: var(--space-8) auto;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.ks-menu-error__icon {
+  width: 52px;
+  height: 52px;
+  background-color: var(--color-cream);
+  border: 1px solid var(--border-caramel);
+  color: var(--color-caramel-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ks-menu-error__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-xl);
+  color: var(--color-espresso);
+  margin-bottom: 0;
+}
+
+.ks-menu-error__message {
+  font-size: var(--fs-sm);
+  color: var(--color-mocha);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--space-2);
+  max-width: 44ch;
+}
+
+/* --------------------------------------------------------------------------
+   Tampilan Kosong ("Menu tidak ditemukan")
+   -------------------------------------------------------------------------- */
+.ks-menu-empty {
+  background-color: var(--color-white);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-12) var(--space-6);
+  text-align: center;
+  max-width: 520px;
+  margin: var(--space-8) auto;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.ks-menu-empty__icon {
+  width: 56px;
+  height: 56px;
+  background-color: var(--color-cream);
+  border: 1px solid var(--border-caramel);
+  color: var(--color-mocha);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-2);
+}
+
+.ks-menu-empty__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-2xl);
+  color: var(--color-espresso);
+  margin-bottom: 0;
+}
+
+.ks-menu-empty__desc {
+  font-size: var(--fs-sm);
+  color: var(--color-mocha);
+  line-height: var(--lh-relaxed);
+  max-width: 42ch;
+  margin-bottom: var(--space-4);
+}

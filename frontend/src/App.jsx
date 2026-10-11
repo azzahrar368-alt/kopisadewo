@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Navbar, Footer, Button, Container, SectionTitle } from './components';
+import { Navbar, Footer, Button, Container, SectionTitle, Menu } from './components';
 import './App.css';
 
 /**
@@ -228,8 +228,27 @@ function App() {
           </Container>
         </section>
 
-        {/* 5. Showcase Komponen Button (Varian Primary & Secondary) */}
+        {/* 5. Daftar Menu Kopi & Camilan Sadewo (Data dari Backend API) */}
         <section className="ks-section-wrapper" id="menu">
+          <Container size="xl">
+            <SectionTitle
+              subtitle="DAFTAR MENU PILIHAN"
+              title="Seduhan Kopi Nusantara & Camilan Joglo"
+              description="Disajikan segar dari racikan biji kopi pilihan tanah Jawa, dinikmati perlahan di bawah keteduhan atap pendopo."
+              align="center"
+              ornament={true}
+            />
+
+            <Menu
+              onOrderProduct={(product) =>
+                handleTestClick(`Pesanan: ${product.name}`)
+              }
+            />
+          </Container>
+        </section>
+
+        {/* 6. Showcase Komponen Button (Varian Primary & Secondary) */}
+        <section className="ks-section-wrapper ks-section-wrapper--alt" id="tombol">
           <Container size="xl">
             <SectionTitle
               subtitle="KOMPONEN BUTTON"
