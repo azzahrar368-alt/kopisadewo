@@ -1,64 +1,61 @@
 /**
- * Kopi Sadewo - Design Tokens
+ * Kopi Sadewo — Design Tokens
  * 
  * Filosofi Desain:
- * Terinspirasi dari arsitektur rumah joglo Jawa: kayu jati kokoh,
- * pendopo lapang berhawa sejuk, pencahayaan alami yang lembut,
- * dan kehangatan seduhan kopi nusantara.
+ * Modern Heritage, Warm Minimalism, & Editorial Design.
+ * Memadukan arsitektur rumah joglo Jawa dengan tata letak editorial kontemporer.
  */
 
 :root {
   /* ==========================================================================
-     Palet Warna (Kopi Sadewo Palette)
+     Palet Warna Resmi Kopi Sadewo
      ========================================================================== */
-  
-  /* Espresso - Warna kayu jati tua, kopi hitam pekat, keteduhan struktur joglo */
-  --color-espresso: #2C1A11;
-  --color-espresso-hover: #3E2519;
-  --color-espresso-active: #20130C;
-  --color-espresso-muted: #4A3328;
-  
-  /* Mocha - Warna tanah liat, kayu jati hangat, seduhan kopi susu klasik */
-  --color-mocha: #7A533C;
-  --color-mocha-light: #9B6E52;
-  --color-mocha-dark: #5B3C2A;
-  
-  /* Cream - Latar dinding kapur joglo, anyaman bambu, suasana sejuk dan tenang */
-  --color-cream: #FAF6F0;
-  --color-cream-subtle: #F3ECE0;
+  --bg-primary: #FAF7F0;          /* Background utama */
+  --text-primary: #2E1D15;        /* Teks utama (Espresso tua) */
+  --color-secondary: #76523B;     /* Cokelat sekunder */
+  --color-terracotta: #B65D38;    /* Aksen terracotta */
+  --border-primary: #E5D9C8;      /* Border halus */
+  --color-white: #FFFFFF;         /* Putih */
+
+  /* Semantic Aliases */
+  --color-espresso: var(--text-primary);
+  --color-espresso-hover: #3E271E;
+  --color-espresso-active: #22150F;
+  --color-mocha: var(--color-secondary);
+  --color-mocha-light: #90664B;
+  --color-mocha-dark: #583D2C;
+  --color-cream: var(--bg-primary);
+  --color-cream-subtle: #F3EFE6;
   --color-cream-card: #FFFFFF;
-  --color-cream-border: #E8DCCB;
-  
-  /* Putih - Kejernihan, ruang nafas bersih, kontras kartu & teks */
-  --color-white: #FFFFFF;
-  --color-white-translucent: rgba(255, 255, 255, 0.85);
-  
-  /* Caramel - Aksen gula aren, ukiran keemasan joglo, sentuhan hangat */
-  --color-caramel: #C68B59;
-  --color-caramel-light: #E0AB7F;
-  --color-caramel-dark: #9E6437;
-  --color-caramel-subtle: rgba(198, 139, 89, 0.15);
+  --color-cream-border: var(--border-primary);
+  --color-cream-darker: #EAE1D3;
+
+  /* Terracotta Accent Variations */
+  --color-caramel: var(--color-terracotta);
+  --color-caramel-dark: #984B2B;
+  --color-caramel-light: #CF7651;
+  --color-caramel-subtle: rgba(182, 93, 56, 0.08);
+
+  /* Borders & Rules */
+  --border-wood: var(--border-primary);
+  --border-accent: var(--color-terracotta);
 
   /* Semantic Mappings */
-  --bg-primary: var(--color-cream);
   --bg-surface: var(--color-white);
   --bg-surface-warm: var(--color-cream-subtle);
   --bg-dark: var(--color-espresso);
   
-  --text-primary: var(--color-espresso);
-  --text-secondary: var(--color-mocha);
-  --text-muted: #8E7364;
+  --text-muted: #846B5A;
   --text-light: var(--color-cream);
   --text-caramel: var(--color-caramel);
 
-  --border-primary: var(--color-cream-border);
-  --border-accent: var(--color-caramel);
-
   /* ==========================================================================
-     Tipografi (Playfair Display + Inter)
+     Tipografi: Maksimal 2 Keluarga Font
+     Serif Editorial (Playfair Display) + Sans-serif Modern (Inter)
      ========================================================================== */
   --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'Courier New', Courier, monospace;
 
   /* Font Weights */
   --fw-normal: 400;
@@ -75,24 +72,24 @@
   --fs-2xl: 1.5rem;    /* 24px */
   --fs-3xl: 1.875rem;  /* 30px */
   --fs-4xl: 2.25rem;   /* 36px */
-  --fs-5xl: 3rem;      /* 48px */
-  --fs-6xl: 3.75rem;   /* 60px */
+  --fs-5xl: 2.875rem;  /* 46px */
+  --fs-6xl: 3.5rem;    /* 56px */
 
   /* Line Heights */
-  --lh-tight: 1.2;
-  --lh-snug: 1.35;
+  --lh-tight: 1.18;
+  --lh-snug: 1.32;
   --lh-normal: 1.6;
-  --lh-relaxed: 1.8;
+  --lh-relaxed: 1.75;
 
   /* Letter Spacing */
   --letter-spacing-tight: -0.02em;
   --letter-spacing-normal: 0em;
-  --letter-spacing-wide: 0.06em;
-  --letter-spacing-wider: 0.12em;
-  --letter-spacing-widest: 0.2em;
+  --letter-spacing-wide: 0.04em;
+  --letter-spacing-wider: 0.08em;
+  --letter-spacing-widest: 0.16em;
 
   /* ==========================================================================
-     Spasi & Ruang Kosong (Generous whitespace - nuansa pendopo luas)
+     Spasi & Tata Letak Kontainer
      ========================================================================== */
   --space-1: 0.25rem;  /* 4px */
   --space-2: 0.5rem;   /* 8px */
@@ -106,45 +103,36 @@
   --space-16: 4rem;    /* 64px */
   --space-20: 5rem;    /* 80px */
   --space-24: 6rem;    /* 96px */
-  --space-32: 8rem;    /* 128px */
 
-  /* ==========================================================================
-     Ukuran Kontainer
-     ========================================================================== */
+  /* Ukuran Kontainer */
   --container-max-sm: 640px;
   --container-max-md: 768px;
   --container-max-lg: 1024px;
-  --container-max-xl: 1200px;
-  --container-max-2xl: 1360px;
+  --container-max-xl: 1180px;
+  --container-max-2xl: 1260px;
 
-  /* ==========================================================================
-     Aksesibilitas & Target Sentuh (Min 44px)
-     ========================================================================== */
+  /* Target Sentuh Minimal Ramah Mobile */
   --touch-target-min: 44px;
 
-  /* ==========================================================================
-     Border Radius (Halus menyerupai sambungan purus kayu jati)
-     ========================================================================== */
+  /* Border Radius - Halus, tidak bulat berlebihan (Anti-AI Slop) */
   --radius-xs: 2px;
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 16px;
-  --radius-2xl: 24px;
+  --radius-sm: 3px;
+  --radius-md: 5px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
   --radius-full: 9999px;
 
-  /* ==========================================================================
-     Bayangan / Bayang Sinar Alami (Warm ambient shadows)
-     ========================================================================== */
-  --shadow-subtle: 0 2px 8px rgba(44, 26, 17, 0.04);
-  --shadow-card: 0 4px 18px rgba(44, 26, 17, 0.06);
-  --shadow-elevated: 0 10px 30px rgba(44, 26, 17, 0.09);
-  --shadow-hover: 0 14px 36px rgba(44, 26, 17, 0.12);
+  /* Bayangan Alami Lembut (Soft Ambient Shadows, bukan bayangan digital pekat) */
+  --shadow-subtle: 0 1px 3px rgba(46, 29, 21, 0.04);
+  --shadow-sm: 0 1px 3px rgba(46, 29, 21, 0.05);
+  --shadow-card: 0 3px 12px rgba(46, 29, 21, 0.05);
+  --shadow-md: 0 4px 14px rgba(46, 29, 21, 0.07);
+  --shadow-elevated: 0 6px 20px rgba(46, 29, 21, 0.07);
+  --shadow-lg: 0 10px 28px rgba(46, 29, 21, 0.12);
+  --shadow-hover: 0 10px 24px rgba(46, 29, 21, 0.09);
 
-  /* ==========================================================================
-     Transisi Lembut
-     ========================================================================== */
-  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* Transisi */
+  --transition-fast: 140ms ease;
+  --transition-normal: 220ms ease;
+  --transition-slow: 350ms ease;
 }

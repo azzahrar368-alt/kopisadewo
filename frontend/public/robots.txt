@@ -1,0 +1,9 @@
+# Robots.txt untuk Kopi Sadewo (Pendopo & Roastery)
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /admin/login
+
+# Peta Situs Resmi
+Sitemap: https://kopisadewo.com/sitemap.xml

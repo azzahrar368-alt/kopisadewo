@@ -1,0 +1,229 @@
+/* ==========================================================================
+   Event Gallery Styles — Kopi Sadewo (Documentary Photo Journal)
+   ========================================================================== */
+
+.ks-gallery {
+  padding: 64px 0;
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--border-primary);
+  position: relative;
+}
+
+/* Category Filter Tabs */
+.ks-gallery__filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+  margin-bottom: 36px;
+}
+
+.ks-gallery__filter-btn {
+  padding: 7px 16px;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-xs);
+  color: var(--color-secondary);
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.ks-gallery__filter-btn:hover {
+  background-color: var(--color-white);
+  color: var(--text-primary);
+  border-color: var(--color-terracotta);
+}
+
+.ks-gallery__filter-btn--active {
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
+}
+
+/* Gallery Grid */
+.ks-gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 28px;
+}
+
+/* Photo Card */
+.ks-gallery-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+}
+
+.ks-gallery-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-terracotta);
+}
+
+.ks-gallery-card__img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-primary);
+  background-color: var(--color-cream-subtle);
+}
+
+.ks-gallery-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.ks-gallery-card:hover .ks-gallery-card__img {
+  transform: scale(1.03);
+}
+
+.ks-gallery-card__badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(46, 29, 21, 0.9);
+  color: var(--bg-primary);
+  padding: 3px 8px;
+  border-radius: var(--radius-xs);
+  font-size: 0.6875rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.ks-gallery-card__body {
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.ks-gallery-card__date {
+  font-size: 0.75rem;
+  color: var(--color-terracotta);
+  font-weight: var(--fw-semibold);
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+
+.ks-gallery-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+  margin: 0 0 8px;
+  line-height: 1.35;
+}
+
+.ks-gallery-card__desc {
+  font-size: 0.85rem;
+  color: var(--color-secondary);
+  line-height: 1.6;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Lightbox Modal */
+.ks-gallery-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(46, 29, 21, 0.8);
+  backdrop-filter: blur(4px);
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.ks-gallery-lightbox__content {
+  background-color: var(--color-white);
+  border-radius: var(--radius-sm);
+  max-width: 680px;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-primary);
+}
+
+.ks-gallery-lightbox__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+  background-color: rgba(46, 29, 21, 0.85);
+  color: var(--color-white);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-xs);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.ks-gallery-lightbox__close:hover {
+  background-color: var(--color-terracotta);
+}
+
+.ks-gallery-lightbox__img {
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.ks-gallery-lightbox__details {
+  padding: 24px;
+}
+
+.ks-gallery-lightbox__tag {
+  color: var(--color-terracotta);
+  font-size: 0.75rem;
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: block;
+}
+
+.ks-gallery-lightbox__title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  color: var(--text-primary);
+  margin: 6px 0 10px;
+  line-height: 1.3;
+}
+
+.ks-gallery-lightbox__text {
+  font-size: 0.9rem;
+  color: var(--color-secondary);
+  line-height: 1.65;
+  margin: 0;
+}

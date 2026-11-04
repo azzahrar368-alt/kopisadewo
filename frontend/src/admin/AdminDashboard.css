@@ -1,0 +1,515 @@
+/* Dasbor Pengelola Kopi Sadewo */
+.ks-admin-page {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-body);
+}
+
+/* Toast Notifikasi */
+.ks-admin-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  z-index: 10000;
+  animation: ks-slide-up 0.25s ease-out;
+}
+
+@keyframes ks-slide-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.ks-admin-toast--success {
+  background-color: #064E3B;
+  color: #ECFDF5;
+  border: 1px solid #059669;
+}
+
+.ks-admin-toast--error {
+  background-color: #7F1D1D;
+  color: #FEF2F2;
+  border: 1px solid #DC2626;
+}
+
+.ks-admin-toast__icon {
+  font-weight: bold;
+}
+
+/* Header Dasbor */
+.ks-admin-header {
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--border-primary);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(46, 29, 21, 0.04);
+}
+
+.ks-admin-header__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.ks-admin-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ks-admin-header__logo {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-terracotta);
+  color: var(--color-white);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ks-admin-header__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-lg);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.ks-admin-header__tagline {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.ks-admin-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ks-admin-user-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--color-cream-subtle);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: var(--fs-xs);
+  color: var(--text-primary);
+  border: 1px solid var(--border-primary);
+}
+
+.ks-admin-btn-secondary {
+  padding: 8px 14px;
+  background-color: var(--color-cream-subtle);
+  border: 1px solid var(--border-primary);
+  border-radius: 6px;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--text-primary);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+}
+
+.ks-admin-btn-secondary:hover {
+  background-color: var(--border-primary);
+}
+
+.ks-admin-btn-logout {
+  padding: 8px 14px;
+  background-color: transparent;
+  border: 1px solid #E57373;
+  color: #C62828;
+  border-radius: 6px;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ks-admin-btn-logout:hover {
+  background-color: #FFEBEE;
+}
+
+/* Konten Utama */
+.ks-admin-main {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 24px 24px 60px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Statistik Grid */
+.ks-admin-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.ks-admin-stat-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--border-primary);
+  border-radius: 10px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 2px 6px rgba(46, 29, 21, 0.03);
+}
+
+.ks-admin-stat-card__label {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  font-weight: var(--fw-semibold);
+}
+
+.ks-admin-stat-card__val {
+  font-family: var(--font-heading);
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+}
+
+.ks-admin-stat-card__desc {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.ks-admin-stat-card--success .ks-admin-stat-card__val {
+  color: #047857;
+}
+
+.ks-admin-stat-card--warning .ks-admin-stat-card__val {
+  color: #B45309;
+}
+
+.ks-admin-stat-card--accent .ks-admin-stat-card__val {
+  color: var(--color-terracotta);
+}
+
+/* Toolbar & Pencarian */
+.ks-admin-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  background-color: var(--color-white);
+  border: 1px solid var(--border-primary);
+  border-radius: 10px;
+  padding: 14px 18px;
+}
+
+.ks-admin-toolbar__search-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 260px;
+  display: flex;
+  align-items: center;
+}
+
+.ks-admin-search-icon {
+  position: absolute;
+  left: 12px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.ks-admin-search-input {
+  width: 100%;
+  padding: 9px 34px;
+  font-size: var(--fs-sm);
+  font-family: var(--font-body);
+  border: 1px solid var(--border-primary);
+  border-radius: 6px;
+  background-color: var(--color-cream-subtle);
+  color: var(--text-primary);
+}
+
+.ks-admin-search-input:focus {
+  outline: none;
+  border-color: var(--color-terracotta);
+  background-color: var(--color-white);
+}
+
+.ks-admin-search-clear {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.ks-admin-toolbar__filters {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ks-admin-filter-select {
+  padding: 9px 14px;
+  font-size: var(--fs-sm);
+  border: 1px solid var(--border-primary);
+  border-radius: 6px;
+  background-color: var(--color-white);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.ks-admin-btn-primary-action {
+  padding: 9px 18px;
+  background-color: var(--color-terracotta);
+  color: var(--color-white);
+  border: none;
+  border-radius: 6px;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.ks-admin-btn-primary-action:hover {
+  background-color: var(--color-caramel-dark);
+}
+
+/* Tabel Produk */
+.ks-admin-table-container {
+  background-color: var(--color-white);
+  border: 1px solid var(--border-primary);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(46, 29, 21, 0.04);
+}
+
+.ks-admin-table-wrapper {
+  overflow-x: auto;
+}
+
+.ks-admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: var(--fs-sm);
+}
+
+.ks-admin-table thead {
+  background-color: var(--color-cream-subtle);
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.ks-admin-table th {
+  padding: 12px 16px;
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: var(--fw-semibold);
+  color: var(--text-muted);
+}
+
+.ks-admin-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border-primary);
+  vertical-align: middle;
+}
+
+.ks-admin-table tr:last-child td {
+  border-bottom: none;
+}
+
+.ks-admin-table tr:hover td {
+  background-color: rgba(250, 247, 240, 0.6);
+}
+
+.ks-admin-td-image {
+  width: 60px;
+}
+
+.ks-admin-thumb {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--border-primary);
+  background-color: var(--color-cream-subtle);
+}
+
+.ks-admin-prod-name {
+  display: block;
+  font-size: var(--fs-sm);
+  color: var(--text-primary);
+}
+
+.ks-admin-prod-desc {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  margin: 3px 0 0;
+  max-width: 380px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ks-admin-badge--category {
+  display: inline-block;
+  padding: 3px 8px;
+  background-color: var(--color-cream-subtle);
+  border: 1px solid var(--border-primary);
+  border-radius: 4px;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  color: var(--color-secondary);
+}
+
+.ks-admin-td-price {
+  white-space: nowrap;
+  font-size: var(--fs-sm);
+  color: var(--text-primary);
+}
+
+/* Status Pill */
+.ks-admin-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ks-admin-status-pill--ready {
+  background-color: #ECFDF5;
+  color: #047857;
+  border-color: #A7F3D0;
+}
+
+.ks-admin-status-pill--ready:hover {
+  background-color: #D1FAE5;
+}
+
+.ks-admin-status-pill--empty {
+  background-color: #FEF2F2;
+  color: #B91C1C;
+  border-color: #FECACA;
+}
+
+.ks-admin-status-pill--empty:hover {
+  background-color: #FEE2E2;
+}
+
+.ks-admin-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+/* Tombol Favorit / Unggulan */
+.ks-admin-featured-btn {
+  background: none;
+  border: 1px solid var(--border-primary);
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ks-admin-featured-btn--active {
+  background-color: #FFFBEB;
+  border-color: #FDE68A;
+  color: #B45309;
+  font-weight: var(--fw-semibold);
+}
+
+/* Aksi Edit & Hapus */
+.ks-admin-td-actions {
+  white-space: nowrap;
+  text-align: right;
+}
+
+.ks-admin-action-btn {
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  cursor: pointer;
+  border: 1px solid var(--border-primary);
+  margin-left: 6px;
+  transition: all 0.2s;
+}
+
+.ks-admin-action-btn--edit {
+  background-color: var(--color-white);
+  color: var(--text-primary);
+}
+
+.ks-admin-action-btn--edit:hover {
+  background-color: var(--color-cream-subtle);
+  border-color: var(--color-terracotta);
+  color: var(--color-terracotta);
+}
+
+.ks-admin-action-btn--delete {
+  background-color: var(--color-white);
+  color: #B91C1C;
+  border-color: #FECACA;
+}
+
+.ks-admin-action-btn--delete:hover {
+  background-color: #FEF2F2;
+}
+
+/* Loading & Empty State */
+.ks-admin-loading-state,
+.ks-admin-empty-state {
+  padding: 60px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.ks-admin-empty-icon {
+  font-size: 2.5rem;
+}
+
+.ks-admin-spinner-large {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--border-primary);
+  border-top-color: var(--color-terracotta);
+  border-radius: 50%;
+  animation: ks-spin 0.8s linear infinite;
+}

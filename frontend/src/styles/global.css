@@ -1,7 +1,7 @@
 @import './tokens.css';
 
 /* ==========================================================================
-   CSS Reset Modern & Standar Aksesibilitas
+   CSS Reset & Dasar Tipografi Kopi Sadewo
    ========================================================================== */
 *,
 *::before,
@@ -38,7 +38,7 @@ body {
 }
 
 /* ==========================================================================
-   Tipografi
+   Tipografi Judul
    ========================================================================== */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
@@ -48,29 +48,12 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: var(--letter-spacing-tight);
 }
 
-h1 {
-  font-size: var(--fs-4xl);
-}
-
-h2 {
-  font-size: var(--fs-3xl);
-}
-
-h3 {
-  font-size: var(--fs-2xl);
-}
-
-h4 {
-  font-size: var(--fs-xl);
-}
-
-h5 {
-  font-size: var(--fs-lg);
-}
-
-h6 {
-  font-size: var(--fs-base);
-}
+h1 { font-size: var(--fs-4xl); }
+h2 { font-size: var(--fs-3xl); }
+h3 { font-size: var(--fs-2xl); }
+h4 { font-size: var(--fs-xl); }
+h5 { font-size: var(--fs-lg); }
+h6 { font-size: var(--fs-base); }
 
 @media (min-width: 768px) {
   h1 { font-size: var(--fs-5xl); }
@@ -109,7 +92,7 @@ button, input, select, textarea {
 }
 
 /* ==========================================================================
-   Seleksi Teks & Fokus Ramah Aksesibilitas
+   Seleksi Teks & Fokus
    ========================================================================== */
 ::selection {
   background-color: var(--color-caramel-light);
@@ -122,21 +105,26 @@ button, input, select, textarea {
 }
 
 /* ==========================================================================
-   Utilitas Visual & Sentuhan Khas Joglo
+   Sentuhan Desain Homie & Tradisi Jawa
    ========================================================================== */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+
+/* Cap Stempel Heritage (Tradisi Craft Mark) */
+.ks-heritage-stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  border: 1px solid var(--border-wood);
+  background-color: var(--color-cream-subtle);
+  color: var(--color-mocha-dark);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--letter-spacing-wider);
+  text-transform: uppercase;
+  border-radius: var(--radius-xs);
 }
 
-/* Garis ornamen kayu joglo halus */
+/* Garis Pembatas Ornamen Joglo */
 .joglo-divider {
   display: flex;
   align-items: center;

@@ -64,9 +64,10 @@ export function useProducts(options = {}) {
         // Fallback kategori default jika API kategori belum siap
         if (active) {
           setCategories([
-            { id: 1, name: 'Coffee', slug: 'coffee' },
-            { id: 2, name: 'Non-Coffee', slug: 'non-coffee' },
-            { id: 3, name: 'Food', slug: 'food' },
+            { id: 1, name: 'Seduhan Kopi', slug: 'coffee' },
+            { id: 2, name: 'Teh & Rempah', slug: 'teh-rempah' },
+            { id: 3, name: 'Kekinian (Ice / Hot)', slug: 'kekinian' },
+            { id: 4, name: 'Jajanan', slug: 'food' },
           ]);
         }
       })
